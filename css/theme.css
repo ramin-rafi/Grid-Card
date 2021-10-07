@@ -300,6 +300,18 @@ select {
 	text-align: right;
 }
 
+.v-middle {
+	vertical-align: middle;
+}
+
+.v-top {
+	vertical-align: top;
+}
+
+.v-bottom {
+	vertical-align: bottom;
+}
+
 .py-0 {
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
@@ -502,15 +514,37 @@ select {
 	line-height: 64px;
 }
 
+.bold {
+	font-weight: 600;
+}
+
 /* Header */
 header {
 	font-size: var(--fontSizeMd);
 	position: relative;
 }
 
+.cartProducts .row:not(.cartProducts .receipt .row),
 header .min-header {
-	border-bottom: 1px solid var(--lightGray);
-	padding: 15px 0;
+	border-bottom: 2px solid var(--lightGray);
+	padding: 15px;
+}
+
+.cartProducts .row {
+	padding: 15px;
+}
+
+.cartProducts .row .total {
+	display: inline-block;
+	width: 80%;
+}
+
+.cartProducts .row:last-child {
+	border-bottom: 2px solid var(--lightGray);
+}
+
+.cartProducts .receipt .container {
+	padding: 10px 0px;
 }
 
 .min-header .config {
@@ -545,6 +579,13 @@ header .min-header {
 	margin-right: 10px;
 }
 
+/* @media screen and (max-width: 600px) {
+	.menu .nav-item {
+		float: none;
+		width: 100%;
+	}
+} */
+
 /* .user-account .menu li:last-child {
   margin-right: 0;
 } */
@@ -573,6 +614,7 @@ header .min-header {
 
 .navbar .nav li {
 	float: left;
+	position: relative;
 }
 
 .navbar .nav li:not(:first-child) {
@@ -597,6 +639,64 @@ header .min-header {
 	color: var(--blue);
 }
 
+/* Brand */
+.logo {
+	background-color: var(--blue);
+	border-radius: 16px;
+	display: inline-block;
+	height: 44px;
+	vertical-align: middle;
+	width: 44px;
+}
+
+.logo::after {
+	border: 6px solid var(--white);
+	border-radius: 4px;
+	content: "";
+	display: block;
+	height: 8px;
+	margin: 11px auto 0;
+	transform: rotate(45deg);
+	width: 8px;
+}
+
+.brand .name {
+	color: var(--dark);
+	display: inline-block;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 27px;
+	margin-top: 10px;
+	position: relative;
+	vertical-align: top;
+}
+
+.nav-item .badge {
+	border-radius: 50%;
+	background-color: var(--pink);
+	color: var(--white);
+	font-weight: bold;
+	font-size: 10px;
+	height: 20px;
+	margin-left: -10px;
+	position: absolute;
+	text-align: center;
+	top: 10px;
+	width: 20px;
+}
+
+/* Subcategory */
+
+.nav .nav-item .dropdown {
+	background-color: var(--white);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	color: var(--dark);
+	display: none;
+	left: -50px;
+	position: absolute;
+	top: 35px;
+	z-index: 10;
+}
 /* Card CSS */
 .card {
 	background-color: var(--white);
@@ -644,19 +744,21 @@ header .min-header {
 }
 
 .card-body .stars {
-	margin: 10px 0px 10px 80px;
+	margin: 10px 0 10px 80px;
 }
 .card-image {
+	line-height: 0;
 	overflow: hidden;
 	/* margin-bottom: 25px; */
 	position: relative;
 }
 
 .card-image img {
-	line-height: 0px;
+	line-height: 0;
 	object-fit: cover;
-	object-position: top;
+	object-position: center;
 	max-width: 100%;
+	max-height: 500px;
 	width: 100%;
 }
 
@@ -692,14 +794,18 @@ header .min-header {
 	height: 500px;
 }
 
+.card.card-md .card-image,
+.card.card-md .card-image img {
+	height: 300px;
+}
+
 .card.card-sm .card-image,
 .card.card-sm .card-image img {
 	height: 200px;
 }
 
-.card.card-md .card-image,
-.card.card-md .card-image img {
-	height: 300px;
+.card .icon {
+	min-height: 125px;
 }
 
 .off {
@@ -780,4 +886,226 @@ header .min-header {
 /* Feature CSS Style */
 .feature {
 	background-color: var(--skyBlue);
+}
+
+/* Best Seller Navigation */
+.bestSeller a {
+	font-size: var(--fontSizeSm);
+	font-weight: 500;
+}
+.bestSeller a:hover {
+	color: var(--blue);
+	text-decoration: underline;
+}
+
+/* Banner */
+.banner .content {
+	color: var(--white);
+}
+
+.banner .content .head {
+	font-weight: 500;
+	font-size: 45px;
+	line-height: 82px;
+}
+
+.banner .content span {
+	font-weight: normal;
+}
+
+.banner .content a {
+	color: var(--white);
+	text-decoration: underline;
+}
+
+/* Footer */
+footer {
+	background-color: var(--skyBlue);
+	height: 680px;
+}
+
+.footer .footerOffers {
+	border-bottom: 2px solid var(--white);
+	text-align: left;
+}
+
+.footerOffers .col .head {
+	font-weight: normal;
+	font-size: var(--fontSizeMd);
+}
+
+a + p {
+	font-size: 12px;
+	line-height: 15px;
+	max-width: 220px;
+	margin-top: 16px;
+}
+
+.footer .data span {
+	display: block;
+}
+
+/* Slick Slider */
+.slick-prev::before,
+.slick-next::before {
+	color: var(--red);
+	font-size: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	opacity: 0.8;
+}
+
+.slick-prev::before {
+	content: " < ";
+	margin-right: -100px;
+}
+
+.slick-next::before {
+	content: " > ";
+	margin-left: -100px;
+}
+
+/* Media Queries */
+@media (max-width: 1170px) {
+	.navbar .nav li:not(:first-child) {
+		margin-left: 55px;
+	}
+}
+
+@media (max-width: 1080px) {
+	.navbar .nav li:not(:first-child) {
+		margin-left: 35px;
+	}
+}
+
+@media (max-width: 993px) {
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11 {
+		width: 50%;
+	}
+
+	.col-offset-1,
+	.col-offset-2,
+	.col-offset-3,
+	.col-offset-4,
+	.col-offset-5,
+	.col-offset-6,
+	.col-offset-7,
+	.col-offset-8,
+	.col-offset-9,
+	.col-offset-10,
+	.col-offset-11,
+	.col-offset-12 {
+		margin: 0 24%;
+		padding: 0;
+	}
+
+	.card {
+		margin: 25px 0;
+	}
+
+	.footer {
+		height: 100%;
+	}
+
+	.slider {
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.navbar .nav li:not(:first-child) {
+		margin-left: 15px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.col,
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11,
+	.col-12 {
+		float: none;
+		width: 100%;
+	}
+
+	.col-offset-1,
+	.col-offset-2,
+	.col-offset-3,
+	.col-offset-4,
+	.col-offset-5,
+	.col-offset-6,
+	.col-offset-7,
+	.col-offset-8,
+	.col-offset-9,
+	.col-offset-10,
+	.col-offset-11,
+	.col-offset-12 {
+		margin: 0;
+	}
+
+	.cardSlider {
+		display: none;
+	}
+
+	.card-image {
+		width: 100%;
+		margin: 0;
+	}
+
+	.card-overlay .card-body {
+		padding: 0;
+	}
+
+	.card-body .details,
+	.card-overlay .card-body,
+	.card-body .price,
+	.card-body .stars {
+		margin: 10px 0;
+	}
+
+	.card-overlay .card-title {
+		padding: 5px 0;
+	}
+
+	.small img {
+		width: 50%;
+	}
+
+	.banner {
+		display: none;
+	}
+
+	.row {
+		align-items: center;
+		text-align: center;
+	}
+
+	a + p {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.card-overlay .title {
+		font-size: var(--fontSizeXl);
+	}
 }
