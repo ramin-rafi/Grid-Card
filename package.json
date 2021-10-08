@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ramin-rafi/Grid-Card#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "font-awesome-animation": "^1.1.1",
     "jquery": "^3.6.0",
     "slick-carousel": "^1.8.1",
     "slick-slider": "^1.8.2"

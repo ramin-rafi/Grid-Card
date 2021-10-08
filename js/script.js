@@ -20,7 +20,6 @@ $('.cardSlider').slick({
           slidesToShow: 1,
         }
       }
-
     ]
 });
 
@@ -32,4 +31,3 @@ $('.slider').slick({
     fade: true,
     cssEase: 'linear'
   });
-

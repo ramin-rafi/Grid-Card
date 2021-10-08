@@ -28,6 +28,7 @@ Colors:
 	--greenHover: #398f28;
 	--yellow: rgb(230, 177, 46);
 	--blue: #40bfff;
+	--purple: #7b28c9;
 	--blueHover: #2ca5e2;
 	--skyBlue: #bcddfe;
 	--gray: #999999;
@@ -673,7 +674,7 @@ header .min-header {
 
 .nav-item .badge {
 	border-radius: 50%;
-	background-color: var(--pink);
+	background-color: var(--red);
 	color: var(--white);
 	font-weight: bold;
 	font-size: 10px;
@@ -965,6 +966,15 @@ a + p {
 	margin-left: -100px;
 }
 
+.slick-next,
+.slick-prev {
+	z-index: 99;
+}
+
+.card .icon i {
+	color: var(--purple);
+}
+
 /* Media Queries */
 @media (max-width: 1170px) {
 	.navbar .nav li:not(:first-child) {
@@ -1104,8 +1114,12 @@ a + p {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 644px) {
 	.card-overlay .title {
 		font-size: var(--fontSizeXl);
+	}
+
+	.badge {
+		margin-top: 35px;
 	}
 }
